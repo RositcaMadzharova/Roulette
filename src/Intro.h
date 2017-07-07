@@ -1,34 +1,29 @@
 /*
  * Intro.h
  *
- *  Created on: 5.07.2017 ã.
- *      Author: Viktor
+ *  Created on: Jul 6, 2017
+ *      Author: mediff
  */
 
 #ifndef INTRO_H_
 #define INTRO_H_
-
-#include "Info.h"
 #include "Button.h"
+#include "Globals.h"
+#include <string>
 
-class Intro
-{
+class Intro {
 public:
-	Intro();
+	Intro(std::string);
 	virtual ~Intro();
-
-	void showInfo();
-	void showGame();
-	void showNewGame();
-	void changeVolume(int); // -/+ volume
-
+	Button *insertCredit;
+	Button *volume[2];
+	Button *info;
+	Button *startNewGame;
+	Button *resumeGame;
 private:
-	Info info;
-	Button start;
-	Button resume; // load
-	Button addCredit; // after clicking wait for input from keyboard
-					  // and addCredit in Accounting
-	Button volume[2]; // -/+
+	SDL_Surface * introImage;
+	SDL_Texture * introTexture;
+	SDL_Window * introWindow;
 };
 
 #endif /* INTRO_H_ */

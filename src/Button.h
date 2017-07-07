@@ -1,27 +1,31 @@
 /*
  * Button.h
  *
- *  Created on: 5.07.2017 ã.
- *      Author: Viktor
+ *  Created on: Jul 6, 2017
+ *      Author: mediff
  */
 
 #ifndef BUTTON_H_
 #define BUTTON_H_
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_Image.h>
+#include <SDL2/SDL_Ttf.h>
+#include <string>
+#include <iostream>
 
-class Button
-{
+class Button {
 public:
-	Button();
+	Button(SDL_Rect={0,0,0,0},SDL_Rect={0,0,0,0});
 	virtual ~Button();
-
-	bool isOver();
-	bool isClicked();
-
+	bool loadFromFile(std::string , SDL_Renderer *);
+    bool isHovered();
+    bool isClicked(	SDL_Event &e);
+	void Render(SDL_Renderer *);
+	SDL_Texture * buttonTexture;
+	SDL_Rect positionOnScreen;
+	SDL_Rect positionFromPicture;
 private:
-	int x;
-	int y;
-	int width;
-	int height;
+
 
 };
 
