@@ -7,12 +7,8 @@
 
 #ifndef LTEXTURE_H_
 #define LTEXTURE_H_
-#include <SDL2\SDL.h>
-#include <SDL2\SDL_image.h>
 #include "Globals.h"
-#include <string>
-#include <cstdio>
-using namespace std;
+#include "Background.h"
 
 class LTexture
 {
@@ -21,8 +17,9 @@ public:
 
 	virtual bool loadFromFile(SDL_Renderer* gRenderer, std::string path);
 	virtual ~LTexture();
-	virtual void render(SDL_Renderer * gRenderer,SDL_Rect *clip, double = 0, SDL_RendererFlip = SDL_FLIP_NONE);
+	virtual void render(SDL_Renderer * gRenderer,SDL_Rect *clip);
 	virtual void free();
+	virtual void Show();
 	int getHeight() const;
 	void setHeight(int height);
 	int getWidth() const;
@@ -30,10 +27,8 @@ public:
 	int getX() const;
 	int getY() const;
 	virtual void setPosition(int _x, int _y);
-	void REctold();
 	SDL_Texture * mTexture;
 protected:
-
 	int mWidth;
     int mHeight;
     int x;

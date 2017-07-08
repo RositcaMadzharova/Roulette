@@ -10,6 +10,7 @@
 
 LTexture::LTexture(int _x, int _y)
 {
+	  mTexture=NULL;
 	  mWidth = 0;
 	  mHeight = 0;
 	  x = _x;
@@ -43,7 +44,7 @@ int LTexture::getY() const {
 	return y;
 }
 
-void LTexture::render(SDL_Renderer* gRenderer, SDL_Rect* clip, double angle, SDL_RendererFlip flip)
+void LTexture::render(SDL_Renderer* gRenderer, SDL_Rect* clip)
 {
 	   //Set rendering space and render to screen
 	    SDL_Rect renderQuad = { x, y, mWidth, mHeight };
@@ -56,8 +57,8 @@ void LTexture::render(SDL_Renderer* gRenderer, SDL_Rect* clip, double angle, SDL
 	    }
 
 	    //Render to screen
-	    SDL_RenderCopy( gRenderer, mTexture, clip, &renderQuad );
-	    SDL_RenderPresent(gRenderer);
+	    SDL_RenderCopy( Background::gRenderer, mTexture, clip, &renderQuad);
+	    SDL_RenderPresent(Background::gRenderer);
 }
 
 void LTexture::free() {
@@ -118,4 +119,9 @@ bool LTexture::loadFromFile(SDL_Renderer* gRenderer, std::string path)
 void LTexture::setPosition(int _x, int _y) {
 	this->x = _x;
 	this->x = _y;
+}
+
+void LTexture::Show()
+{
+	SDL_RenderPresent(Background::gRenderer);
 }
