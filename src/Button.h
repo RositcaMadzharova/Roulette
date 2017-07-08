@@ -1,32 +1,22 @@
 /*
  * Button.h
  *
- *  Created on: Jul 6, 2017
- *      Author: mediff
+ *  Created on: Jul 7, 2017
+ *      Author: kakev
  */
 
 #ifndef BUTTON_H_
 #define BUTTON_H_
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_Image.h>
-#include <SDL2/SDL_Ttf.h>
-#include <string>
-#include <iostream>
+#include <vector>
+#include "LTexture.h"
 
-class Button {
+
+class Button : public LTexture {
 public:
-	Button(SDL_Rect={0,0,0,0},SDL_Rect={0,0,0,0});
+	Button(int x = 0, int y = 0);
+	virtual bool isClicked(int x, int y);
 	virtual ~Button();
-	bool loadFromFile(std::string , SDL_Renderer *);
-    bool isHovered();
-    bool isClicked(	SDL_Event &e);
-	void Render(SDL_Renderer *);
-	SDL_Texture * buttonTexture;
-	SDL_Rect positionOnScreen;
-	SDL_Rect positionFromPicture;
 private:
-
-
 };
 
 #endif /* BUTTON_H_ */
