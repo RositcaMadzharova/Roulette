@@ -14,7 +14,7 @@ public:
 	Info();
 	virtual ~Info();
 
-	void showInfo();
+	friend void ShowInfo(Info*);
 };
 
 #endif /* INFO_H_ */

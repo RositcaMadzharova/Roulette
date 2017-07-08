@@ -9,6 +9,7 @@
 
 Application::Application()
 {
+	state = 0;
 	// TODO Auto-generated constructor stub
 	
 }

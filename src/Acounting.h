@@ -8,6 +8,10 @@
 #ifndef ACOUNTING_H_
 #define ACOUNTING_H_
 
+#include "Globals.h"
+#include <set>
+using namespace std;
+
 class Acounting
 {
 public:
@@ -16,16 +20,19 @@ public:
 
 	int getCredits();
 
-	void addCredits(int); // number of credits
-	void addBet(int); // number of credits bet
-	void winBet(int, double); // credits, multiplier
+	void AddCredits(int); // number of credits
+	void AddBet(int); // number of credits bet
+	void WinBet(int, double); // credits, multiplier
 
-	void addBonus(); // after spin of wheel use this
+	void AddBonus(); // after spin of wheel use this
 					 // +13% of creditsBet
-	double getBonus();
+	double GetBonus();
 
 
 private:
+	set<int> black;
+	set<int> red;
+
 	double profitByNumber[37];
 	static int creditsIn;
 	static int creditsOut;

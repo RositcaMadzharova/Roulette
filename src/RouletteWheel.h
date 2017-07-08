@@ -21,9 +21,9 @@ public:
 	RouletteWheel();
 	virtual ~RouletteWheel();
 
-	void spin(); // spin roulette and ball
+	void Spin(); // spin roulette and ball
 				 // from outerRing to numberRing
-	int winningNumber(); // rand() % 37;
+	int WinningNumber(); // rand() % 37;
 
 
 private:

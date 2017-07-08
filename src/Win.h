@@ -18,7 +18,7 @@ public:
 	Win();
 	virtual ~Win();
 
-	void showWin(); // show winnig screen for 6s
+	void ShowWin(); // show winnig screen for 6s
 
 private:
 

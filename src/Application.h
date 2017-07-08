@@ -21,7 +21,13 @@ public:
 	Application();
 	virtual ~Application();
 
-	void showBakgound();
+	void ShowBakgound();
+
+	void AutoSave(); // to XML
+	void Load(); // from XML
+
+	void NewGame(); // free XML
+
 
 private:
 	int state; //which background using

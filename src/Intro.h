@@ -17,18 +17,23 @@ public:
 	Intro();
 	virtual ~Intro();
 
-	void showInfo();
-	void showGame();
-	void showNewGame();
-	void changeVolume(int); // -/+ volume
+	friend void ShowIntro(Intro*);
+
+	void ShowInfo(Info&);
+	void ShowGame();
+	void ShowNewGame();
+	void ChangeVolume(int); // -/+ volume
+
 
 private:
-	Info info;
+
 	Button start;
 	Button resume; // load
 	Button addCredit; // after clicking wait for input from keyboard
 					  // and addCredit in Accounting
 	Button volume[2]; // -/+
+	Button info;
+
 };
 
 #endif /* INTRO_H_ */

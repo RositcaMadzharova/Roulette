@@ -18,3 +18,8 @@ Info::~Info()
 	// TODO Auto-generated destructor stub
 }
 
+
+void ShowInfo(Info* info)
+{
+	//Draw info image;
+}

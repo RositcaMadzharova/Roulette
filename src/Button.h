@@ -14,8 +14,10 @@ public:
 	Button();
 	virtual ~Button();
 
-	bool isOver();
-	bool isClicked();
+	bool IsHover();
+	bool IsClicked();
+
+	void Show();
 
 private:
 	int x;

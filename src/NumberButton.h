@@ -16,7 +16,12 @@ public:
 	NumberButton();
 	virtual ~NumberButton();
 
+	bool IsHover();
+	bool IsClicked();
 
+	void Show();
+private:
+	int number;
 };
 
 #endif /* NUMBERBUTTON_H_ */
